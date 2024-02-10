@@ -1,11 +1,11 @@
 name: "Test Code And Deploy"
-on: push
+on: [push, workflow_dispatch]
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 #uses key is useed to perform actions using 3rd party actions this action will clone code on test runner ubuntu
       - name: Install nodeJs
         uses: actions/setup-node@v4
         with:
